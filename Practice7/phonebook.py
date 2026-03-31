@@ -1,5 +1,6 @@
 from connect import connect
 import csv
+import os
 
 
 def insert_contact(name, phone):
@@ -25,7 +26,6 @@ def get_contacts():
         return
 
     cur = conn.cursor()
-
     cur.execute("SELECT * FROM contacts")
     rows = cur.fetchall()
 
@@ -85,7 +85,17 @@ def insert_from_csv():
     cur = conn.cursor()
 
     try:
-        with open("contacts.csv", "r", encoding="utf-8") as file:
+        # путь к текущей папке
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(base_dir, "contacts.csv")
+
+        print("Looking for:", file_path)
+
+        if not os.path.exists(file_path):
+            print(" File contacts.csv not found!")
+            return
+
+        with open(file_path, "r", encoding="utf-8") as file:
             reader = csv.DictReader(file)
             for row in reader:
                 cur.execute(
