@@ -1,7 +1,6 @@
 import pygame
 import datetime
 import os
-import math
 
 BASE_DIR = os.path.dirname(__file__)
 
