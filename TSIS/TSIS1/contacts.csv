@@ -1,0 +1,6 @@
+name,phone,phone_type,email,birthday,group
+Alice Smith,1234567890,mobile,alice@gmail.com,1990-05-14,Friend
+Bob Jones,0987654321,work,bob@work.com,1985-11-02,Work
+Charlie Brown,5551234567,home,charlie@gmail.com,1993-07-30,Family
+Diana Prince,5559876543,mobile,diana@example.com,1988-03-19,Friend
+Eve Adams,5550001111,work,eve@corp.com,1995-01-25,Work
